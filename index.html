@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Menghubungkan ke WhatsApp...</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengalihkan ke WhatsApp Kurnia Shockbreaker...</title>
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -16,35 +17,28 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '882125228252686');
     fbq('track', 'PageView');
-    fbq('track', 'Contact'); // Event pelacakan chat WA
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=882125228252686&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- Script Redirect ke WhatsApp dengan Jeda 1.2 Detik -->
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://wa.me/6285711177849?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20di%20iklan.%20Bisa%20tanya-tanya%20dulu%3F";
-        }, 1200);
-    </script>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 60px; font-family: sans-serif; padding: 20px;">
-        <!-- Animasi loading lingkaran berputar -->
-        <div style="border: 4px solid #f3f3f3; border-top: 4px solid #25D366; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px auto;"></div>
-        
-        <p style="font-size: 18px; color: #333; font-weight: bold;">Menghubungkan Anda ke WhatsApp Admin...</p>
-        <p style="font-size: 14px; color: #777;">Jika halaman tidak berpindah otomatis, <a href="https://wa.me/6285711177849?text=Halo%2C%20saya%20tertarik%20dengan%20pelayanan%20di%20iklan.%20Bisa%20tanya-tanya%20dulu%3F" style="color: #25D366; font-weight: bold; text-decoration: none;">Klik Disini</a>.</p>
-    </div>
+    
+    <script>
+        // Redirect Utama: Jeda 1 detik agar Meta Pixel berhasil merekam 'PageView'
+        setTimeout(function() {
+            window.location.replace("https://wa.me/6285711177849?text=Halo%20Kurnia%20Shockbreaker%2C%20saya%20mau%20tanya-tanya%20tentang%20servis%20shockbreaker%20untuk%20%5BJenis%20Motor%5D%20saya...");
+        }, 1000); 
+    </script>
 
-    <!-- Gaya CSS untuk animasi muter-muter loading -->
-    <style>
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <!-- Tampilan sementara saat loading -->
+    <p style="text-align: center; font-family: Arial, sans-serif; margin-top: 50px;">
+        Sedang mengalihkan ke WhatsApp Kurnia Shockbreaker...<br><br>
+        Jika tidak dialihkan secara otomatis dalam beberapa detik, <br>
+        <a href="https://wa.me/6285711177849?text=Halo%20Kurnia%20Shockbreaker%2C%20saya%20mau%20tanya-tanya%20tentang%20servis%20shockbreaker%20untuk%20%5BJenis%20Motor%5D%20saya..." style="color: #25D366; font-weight: bold; text-decoration: none;">Klik di sini untuk Lanjut ke Chat</a>.
+    </p>
+
 </body>
 </html>
