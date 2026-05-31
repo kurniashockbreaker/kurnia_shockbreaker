@@ -536,6 +536,28 @@ src="https://www.facebook.com/tr?id=882125228252686&ev=PageView&noscript=1"
     line-height: 1.6;
   }
 </style>
+<script>
+  // Fungsi untuk mengirim event ke Cloudflare Worker
+  function sendToCAPI(eventName) {
+    // GANTI DENGAN URL WORKER CLOUDFLARE ANDA
+    const workerUrl = "https://meta-capi-ks.kurniashockbreaker.workers.dev"; 
+    
+    fetch(workerUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventName: eventName,
+        url: window.location.href // Mengirim URL halaman tempat event terjadi
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log("CAPI Sukses:", data))
+    .catch(error => console.error("CAPI Gagal:", error));
+  }
+
+  // Contoh 1: Merekam 'Page View' secara otomatis saat web terbuka
+  sendToCAPI("PageView");
+</script>
 </head>
 <body>
 
@@ -704,7 +726,7 @@ src="https://www.facebook.com/tr?id=882125228252686&ev=PageView&noscript=1"
 <div class="cta-wrap">
   <a href="https://wa.me/6285711177849?text=Halo+Kurnia+Shockbreaker%2C+saya+mau+tanya+info+servis+shockbreaker+motor+saya.+Boleh+minta+estimasi+harga%3F"
      class="cta-btn"
-     onclick="fbq && fbq('track', 'Contact')">
+     onclick="fbq && fbq('track', 'Contact'); sendToCAPI('Contact');">
     <span class="cta-icon">💬</span>
     <div class="cta-text-wrap">
       <span class="cta-main">Chat WhatsApp Sekarang</span>
@@ -717,6 +739,5 @@ src="https://www.facebook.com/tr?id=882125228252686&ev=PageView&noscript=1"
   Buka Sabtu–Kamis · 09.00–17.00 · Jum'at Libur<br>
   Jl. Soekarno Hatta No.256, Kota Bandung
 </div>
-
 </body>
 </html>
